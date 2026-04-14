@@ -6,7 +6,7 @@ This plan outlines the step-by-step execution for building the B1C Dashboard, a 
 Establish the monorepo structure and initialize core configurations.
 
 1.  **Monorepo Initialization:**
-    *   Create `cms/`, `frontend/`, and `infrastructure/` directories.
+    *   Create `cms/`, `frontend/`, and `infra/` directories.
     *   Initialize a root `package.json` (optional, for workspace management).
 2.  **Frontend Scaffolding (Vite + TS):**
     *   Initialize Vite in `frontend/` using the `react-ts` template.
@@ -62,7 +62,7 @@ Build the functional React application.
 Define the cloud environment.
 
 1.  **AWS Resource Definition:**
-    *   `infrastructure/main.tf`: Define S3 bucket for static hosting.
+    *   `infra/main.tf`: Define S3 bucket for static hosting.
     *   Configure CloudFront distribution with Origin Access Identity (OAI).
     *   Request/Validate ACM Certificates for `b1c.com`.
 2.  **DNS & Edge:**
