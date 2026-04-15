@@ -1,0 +1,13 @@
+{
+  "name": "b1c-dashboard",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "cms"
+  ],
+  "scripts": {
+    "frontend:dev": "npm run dev -w frontend",
+    "cms:dev": "npm run dev -w cms",
+    "build": "npm run build --workspaces"
+  }
+}

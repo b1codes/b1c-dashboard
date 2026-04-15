@@ -1,0 +1,19 @@
+{
+  "name": "b1c-cms",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "graphql-deploy": "sanity graphql deploy"
+  },
+  "dependencies": {
+    "sanity": "^3.39.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8",
+    "@sanity/vision": "^3.39.0"
+  }
+}
