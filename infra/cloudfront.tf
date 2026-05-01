@@ -1,5 +1,5 @@
-resource "aws_cloudfront_origin_access_control" "main" {
-  name                              = "s3-oac"
+resource "aws_cloudfront_origin_access_control" "default" {
+  name                              = "${var.project_name}-oac"
   description                       = "OAC for S3 origins"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
@@ -9,14 +9,15 @@ resource "aws_cloudfront_origin_access_control" "main" {
 resource "aws_cloudfront_distribution" "app" {
   origin {
     domain_name              = aws_s3_bucket.app.bucket_regional_domain_name
-    origin_access_control_id = aws_cloudfront_origin_access_control.main.id
     origin_id                = "S3-App"
+    origin_access_control_id = aws_cloudfront_origin_access_control.default.id
   }
 
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
-  aliases             = [var.domain_name]
+
+  aliases = [var.domain_name]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
@@ -52,14 +53,15 @@ resource "aws_cloudfront_distribution" "app" {
 resource "aws_cloudfront_distribution" "cms" {
   origin {
     domain_name              = aws_s3_bucket.cms.bucket_regional_domain_name
-    origin_access_control_id = aws_cloudfront_origin_access_control.main.id
     origin_id                = "S3-CMS"
+    origin_access_control_id = aws_cloudfront_origin_access_control.default.id
   }
 
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
-  aliases             = ["studio.${var.domain_name}"]
+
+  aliases = ["studio.${var.domain_name}"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
