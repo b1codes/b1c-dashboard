@@ -72,7 +72,7 @@ Define the cloud environment.
 Finalize the pipeline and verify the implementation.
 
 1.  **Build Process:**
-    *   Configure Vite for static export (`npm run build`).
+    *   Configure Vite for static export (`pnpm run build`).
     *   Test build output locally.
 2.  **Manual Verification:**
     *   Verify glassmorphism rendering across different browsers.

@@ -1,0 +1,6 @@
+packages:
+  - 'frontend'
+  - 'cms'
+allowBuilds:
+  esbuild: false
+  msw: false

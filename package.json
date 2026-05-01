@@ -1,13 +1,9 @@
 {
   "name": "b1c-dashboard",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "cms"
-  ],
   "scripts": {
-    "frontend:dev": "npm run dev -w frontend",
-    "cms:dev": "npm run dev -w cms",
-    "build": "npm run build --workspaces"
+    "frontend:dev": "pnpm --filter frontend dev",
+    "cms:dev": "pnpm --filter b1c-cms dev",
+    "build": "pnpm -r build"
   }
 }
