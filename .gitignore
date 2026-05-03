@@ -154,3 +154,9 @@ pnpm-debug.log*
 *.tfstate.backup
 *.tfvars
 *.tfvars.json
+
+# Agent Modules (Proprietary)
+.agent/modules/llc-*
+/CLAUDE.md
+/agent.md
+/GEMINI.md
