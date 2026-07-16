@@ -7,7 +7,7 @@ variable "region" {
 variable "domain_name" {
   description = "Primary domain name"
   type        = string
-  default     = "b1c.com"
+  default     = "b1codes.com"
 }
 
 variable "project_name" {
