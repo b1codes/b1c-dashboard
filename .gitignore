@@ -157,6 +157,8 @@ pnpm-debug.log*
 
 # Agent Modules (Proprietary)
 .agents/modules/
+.agents/skills/impeccable/
+skills-lock.json
 /CLAUDE.md
 /AGENTS.md
 /GEMINI.md
@@ -166,3 +168,9 @@ CLAUDE.md
 .claude/
 GEMINI.md
 .gemini/
+
+# Impeccable
+**/PRODUCT.md
+**/DESIGN.md
+**/.impeccable/
+
