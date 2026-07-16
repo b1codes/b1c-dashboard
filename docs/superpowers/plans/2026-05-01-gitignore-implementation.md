@@ -4,7 +4,7 @@
 
 **Goal:** Establish a robust and secure `.gitignore` to prevent leakage of credentials and proprietary "secret sauce" agent configurations in a public repo.
 
-**Architecture:** Use a Restricted Allowlist pattern for agent directories (`.agent/`, `.claude/`) and a comprehensive blacklist for Infra/CMS artifacts.
+**Architecture:** Use a Restricted Allowlist pattern for agent directories (`.agents/`, `.claude/`) and a comprehensive blacklist for Infra/CMS artifacts.
 
 **Tech Stack:** Git
 
@@ -78,12 +78,12 @@ Add the fail-secure pattern to `.gitignore`.
 
 ```gitignore
 # Agentic Tooling (Secret Sauce)
-.agent/
+.agents/
 .claude/
 .gemini/
 
 # Explicitly Allow Public Agent Configs
-!.agent/public/
+!.agents/public/
 !.claude/config.json
 !.gemini/public/
 ```
@@ -92,16 +92,16 @@ Add the fail-secure pattern to `.gitignore`.
 
 Run:
 ```bash
-mkdir -p .agent/private .agent/public
-touch .agent/private/secret.md .agent/public/readme.md
+mkdir -p .agents/private .agents/public
+touch .agents/private/secret.md .agents/public/readme.md
 git status
 ```
-Expected: `.agent/public/readme.md` is visible, `.agent/private/` is NOT.
+Expected: `.agents/public/readme.md` is visible, `.agents/private/` is NOT.
 
 - [ ] **Step 3: Cleanup test files and Commit**
 
 ```bash
-rm -rf .agent
+rm -rf .agents
 git add .gitignore
 git commit -m "feat(security): implement restricted allowlist for agentic directories"
 ```
@@ -119,7 +119,7 @@ Review the entire `.gitignore` for duplicates or missing environment patterns. E
 
 - [ ] **Step 2: Verification before completion**
 
-Run: `git check-ignore -v .agent/secret.md .env infra/terraform.tfstate`
+Run: `git check-ignore -v .agents/secret.md .env infra/terraform.tfstate`
 Expected: Output showing the rule that ignores each file.
 
 - [ ] **Step 3: Final Commit**
