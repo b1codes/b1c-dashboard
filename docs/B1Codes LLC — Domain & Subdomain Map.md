@@ -6,7 +6,7 @@ Base: `b1codes.com`. Every project gets a details page at `b1codes.com/projects/
 
 | Item | Route | Notes |
 |---|---|---|
-| b1c-dashboard | `b1codes.com` (root) | This *is* the main site/CMS — not listed under /projects. |
+| b1c-dashboard | `b1codes.com` (root) | This *is* the main site — a static site with all content as code, not listed under /projects. |
 | dev-portfolio → `Portfolio` (private) | `portfolio.b1codes.com` | Your actual live dev portfolio. No /projects page — it's personal, not a showcased product. |
 | dev-portfolio → `Portfolio-Showcase` (public) | `b1codes.com/projects/portfolio-showcase` | Open-source template version. Details page only, no subdomain. |
 
@@ -30,7 +30,7 @@ Base: `b1codes.com`. Every project gets a details page at `b1codes.com/projects/
 | PersonalSpotifyStatsWebApp | `b1codes.com/projects/spotify-stats` | `spotify-stats.b1codes.com` |
 | TimeBlock | `b1codes.com/projects/timeblock` | `timeblock.b1codes.com` |
 | WatchList-React-App | `b1codes.com/projects/watchlist` | `watchlist.b1codes.com` |
-| git-activity-tracker | `b1codes.com/projects/git-activity-tracker` | `git-activity-tracker.b1codes.com` |
+
 
 ## iOS projects (details page only — no subdomain)
 
@@ -51,6 +51,7 @@ Base: `b1codes.com`. Every project gets a details page at `b1codes.com/projects/
 | PersonalSpotifyStatsBackup | Python backend/Lambda utility | `b1codes.com/projects/spotify-stats-backup` |
 | TicTacToeGUI | Java desktop GUI | `b1codes.com/projects/tic-tac-toe` |
 | brain-indexer | Rust CLI | `b1codes.com/projects/brain-indexer` |
+| git-activity-tracker | Frontend npm component (not a full web app) | `b1codes.com/projects/git-activity-tracker` |
 
 ## Internal private/public repo pairs (details page only — no subdomain)
 
@@ -76,6 +77,5 @@ Per your note, these only need a page for the public repo; the private sibling i
 - `spotify-stats.b1codes.com`
 - `timeblock.b1codes.com`
 - `watchlist.b1codes.com`
-- `git-activity-tracker.b1codes.com`
 
-(13 subdomains total, plus the apex/root for b1c-dashboard.)
+(12 subdomains total, plus the apex/root for b1c-dashboard.)
