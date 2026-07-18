@@ -1,7 +1,0 @@
-packages:
-  - 'frontend'
-  - 'cms'
-  - 'shared'
-allowBuilds:
-  esbuild: false
-  msw: false

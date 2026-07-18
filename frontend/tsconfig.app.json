@@ -24,9 +24,12 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Alias */
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@content": ["./content/index.ts"],
+      "@content/*": ["./content/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "content"]
 }

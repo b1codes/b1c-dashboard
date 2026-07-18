@@ -1,0 +1,47 @@
+---
+title: Pivoting from Sanity CMS to Content-as-Code
+date: '2026-07-18'
+projectSlug: b1c-dashboard
+excerpt: Why I replaced a headless CMS with TypeScript files and MDX — and why this is the right call for an animated, static-first portfolio.
+tags:
+  - architecture
+  - cms
+  - gcp
+---
+
+# Pivoting from Sanity CMS to Content-as-Code
+
+## The original plan
+
+The initial architecture used [Sanity](https://sanity.io) as a headless CMS, with the frontend fetching content at build time via the Sanity client.
+
+## Why I pivoted
+
+For a portfolio site with low-frequency content updates and a single author, a hosted CMS introduces unnecessary dependencies:
+
+- **External platform dependency** — Sanity is another service to monitor, authenticate against, and trust
+- **Build-time API calls** — every build must successfully reach the Sanity API
+- **Consolidation goal** — the entire stack is being unified under GCP
+
+## The new approach
+
+```
+/content
+  /structured
+    projects.ts   ← TypeScript objects, fully typed
+    brand.ts      ← Site config
+  /blog
+    *.mdx         ← Markdown + JSX for dev log posts
+```
+
+**Structured data** (projects, brand config) lives as typed TypeScript. It's imported directly at build time — zero network calls, zero runtime fetching, full type safety.
+
+**Blog posts** are MDX files with frontmatter. MDX is the right tool here because posts may eventually embed interactive React components (diagrams, demos).
+
+## Performance impact
+
+This is a net performance improvement for an animated site. There are no loading states between page mount and content render — everything is pre-baked into the static output and served from the CDN edge.
+
+## What I'd do differently
+
+Start here. The Sanity setup is excellent for teams or multi-author sites. For a solo developer-portfolio with a GCP consolidation goal, it's unnecessary complexity.
